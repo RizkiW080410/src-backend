@@ -26,13 +26,22 @@
                             {{ trans('cruds.booking.fields.id') }}
                         </th>
                         <th>
+                            {{ trans('cruds.booking.fields.fullname') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.booking.fields.phone') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.booking.fields.email') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.booking.fields.table') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.booking.fields.start_book') }}
                         </th>
                         <th>
                             {{ trans('cruds.booking.fields.finish_book') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.booking.fields.category') }}
                         </th>
                         <th>
                             {{ trans('cruds.booking.fields.status') }}
@@ -52,13 +61,22 @@
                                 {{ $booking->id ?? '' }}
                             </td>
                             <td>
+                                {{ $booking->fullname ?? '' }}
+                            </td>
+                            <td>
+                                {{ $booking->phone ?? '' }}
+                            </td>
+                            <td>
+                                {{ $booking->email ?? '' }}
+                            </td>
+                            <td>
+                               {{ trans('cruds.table_information.table') }} {{ $booking->table_id ?? '' }}
+                            </td>
+                            <td>
                                 {{ $booking->start_book ?? '' }}
                             </td>
                             <td>
                                 {{ $booking->finish_book ?? '' }}
-                            </td>
-                            <td>
-                                {{ App\Models\Booking::CATEGORY_SELECT[$booking->category] ?? '' }}
                             </td>
                             <td>
                                 {{ App\Models\Booking::STATUS_SELECT[$booking->status] ?? '' }}

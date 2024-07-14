@@ -30,10 +30,10 @@
     </header>
 
     <!-- cover section -->
-    <section class="cover" style="background-image: url({{ $galleris[3]->image->getUrl('preview') }})">
+    <section class="cover" style="background-image: url({{ $galleris[2]->image->getUrl('preview') }})">
         <div class="cover--overlay">
-            <h1>{{ $galleris[3]->title }}</h1>
-            <span class="slogan">{!! $galleris[3]->description !!}</span>
+            <h1>{{ $galleris[2]->title }}</h1>
+            <span class="slogan">{!! $galleris[2]->description !!}</span>
         </div>
     </section>
 

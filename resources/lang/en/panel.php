@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'site_title' => 'PEMWEB',
+    'site_title' => 'BILLIARD CLUB',
 
 ];

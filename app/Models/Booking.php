@@ -14,12 +14,6 @@ class Booking extends Model
 
     public $table = 'bookings';
 
-    public const CATEGORY_SELECT = [
-        'open'   => 'Open',
-        'packet' => 'Packet',
-        'promo'  => 'Promo',
-    ];
-
     protected $dates = [
         'start_book',
         'finish_book',
@@ -30,14 +24,19 @@ class Booking extends Model
 
     public const STATUS_SELECT = [
         'Cancel'    => 'Cancel',
+        'Pending'   => 'Pending',
         'Booking'   => 'Booking',
-        'Available' => 'Available',
+        'Main'      => 'Main',
+        'Selesai' => 'Selesai',
     ];
 
     protected $fillable = [
+        'fullname',
+        'phone',
+        'email',
+        'table_id',
         'start_book',
         'finish_book',
-        'category',
         'status',
         'created_at',
         'updated_at',
@@ -67,5 +66,10 @@ class Booking extends Model
     public function setFinishBookAttribute($value)
     {
         $this->attributes['finish_book'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
+    }
+
+    public function table()
+    {
+        return $this->belongsTo(Table::class);
     }
 }

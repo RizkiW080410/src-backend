@@ -254,8 +254,8 @@ return [
         ],
     ],
     'fnB' => [
-        'title'          => 'FnB',
-        'title_singular' => 'FnB',
+        'title'          => 'Pengelolaan',
+        'title_singular' => 'Pengelolaan',
     ],
     'table' => [
         'title'          => 'Tables',
@@ -292,6 +292,16 @@ return [
         'fields'         => [
             'id'                 => 'ID',
             'id_helper'          => ' ',
+            'fullname'         => 'Full Name',
+            'fullname_helper'  => ' ',
+            'address'        => 'Alamat',
+            'address_helper' => ' ',
+            'phone'           => 'Phone',
+            'phone_helper'    => ' ',
+            'email'           => 'Email',
+            'email_helper'    => ' ',
+            'table'           => 'Meja',
+            'table_helper'    => ' ',
             'start_book'         => 'Start Book',
             'start_book_helper'  => ' ',
             'finish_book'        => 'Finish Book',

@@ -25,6 +25,38 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.booking.fields.fullname') }}
+                        </th>
+                        <td>
+                            {{ $booking->fullname }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.booking.fields.phone') }}
+                        </th>
+                        <td>
+                            {{ $booking->phone }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.booking.fields.email') }}
+                        </th>
+                        <td>
+                            {{ $booking->email }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.booking.fields.table') }}
+                        </th>
+                        <td>
+                            {{ trans('cruds.table_information.table') }} {{ $booking->table_id ?? '' }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.booking.fields.start_book') }}
                         </th>
                         <td>
@@ -37,14 +69,6 @@
                         </th>
                         <td>
                             {{ $booking->finish_book }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.booking.fields.category') }}
-                        </th>
-                        <td>
-                            {{ App\Models\Booking::CATEGORY_SELECT[$booking->category] ?? '' }}
                         </td>
                     </tr>
                     <tr>

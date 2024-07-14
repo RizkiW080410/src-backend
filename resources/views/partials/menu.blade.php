@@ -66,7 +66,7 @@
                     {{ trans('cruds.frontend.title') }}
                 </a>
                 <ul class="c-sidebar-nav-dropdown-items">
-                    @can('daftar_layanan_access')
+                    <!-- @can('daftar_layanan_access')
                         <li class="c-sidebar-nav-item">
                             <a href="{{ route("admin.daftar-layanans.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/daftar-layanans") || request()->is("admin/daftar-layanans/*") ? "c-active" : "" }}">
                                 <i class="fa-fw fas fa-concierge-bell c-sidebar-nav-icon">
@@ -105,7 +105,7 @@
                                 {{ trans('cruds.blog.title') }}
                             </a>
                         </li>
-                    @endcan
+                    @endcan -->
                     @can('gallery_access')
                         <li class="c-sidebar-nav-item">
                             <a href="{{ route("admin.galleries.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/galleries") || request()->is("admin/galleries/*") ? "c-active" : "" }}">
@@ -116,7 +116,7 @@
                             </a>
                         </li>
                     @endcan
-                    @can('tim_access')
+                    <!-- @can('tim_access')
                         <li class="c-sidebar-nav-item">
                             <a href="{{ route("admin.tims.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/tims") || request()->is("admin/tims/*") ? "c-active" : "" }}">
                                 <i class="fa-fw fab fa-teamspeak c-sidebar-nav-icon">
@@ -145,16 +145,14 @@
                                 {{ trans('cruds.footer.title') }}
                             </a>
                         </li>
-                    @endcan
+                    @endcan -->
                 </ul>
             </li>
         @endcan
         @can('fn_b_access')
             <li class="c-sidebar-nav-dropdown {{ request()->is("admin/tables*") ? "c-show" : "" }} {{ request()->is("admin/bookings*") ? "c-show" : "" }} {{ request()->is("admin/prices*") ? "c-show" : "" }} {{ request()->is("admin/products*") ? "c-show" : "" }}">
                 <a class="c-sidebar-nav-dropdown-toggle" href="#">
-                    <i class="fa-fw fas fa-utensils c-sidebar-nav-icon">
-
-                    </i>
+                <i class="fa-fw fas fa-file-alt c-sidebar-nav-icon"></i>
                     {{ trans('cruds.fnB.title') }}
                 </a>
                 <ul class="c-sidebar-nav-dropdown-items">
@@ -185,16 +183,6 @@
 
                                 </i>
                                 {{ trans('cruds.order.title') }}
-                            </a>
-                        </li>
-                    @endcan
-                    @can('price_access')
-                        <li class="c-sidebar-nav-item">
-                            <a href="{{ route("admin.prices.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/prices") || request()->is("admin/prices/*") ? "c-active" : "" }}">
-                                <i class="fa-fw far fa-money-bill-alt c-sidebar-nav-icon">
-
-                                </i>
-                                {{ trans('cruds.price.title') }}
                             </a>
                         </li>
                     @endcan

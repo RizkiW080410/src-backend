@@ -17,6 +17,18 @@ class UpdateBookingRequest extends FormRequest
     public function rules()
     {
         return [
+            'fullname' => [
+                'string',
+                'required',
+            ],
+            'phone' => [
+                'string',
+                'required',
+            ],
+            'email' => [
+                'required',
+                'email',
+            ],
             'start_book' => [
                 'required',
                 'date_format:' . config('panel.date_format') . ' ' . config('panel.time_format'),
@@ -24,9 +36,6 @@ class UpdateBookingRequest extends FormRequest
             'finish_book' => [
                 'required',
                 'date_format:' . config('panel.date_format') . ' ' . config('panel.time_format'),
-            ],
-            'category' => [
-                'required',
             ],
         ];
     }

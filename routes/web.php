@@ -1,7 +1,7 @@
 <?php
 
 // rout tampilan scan
-Route::get('/', 'ProductscanController@index');
+Route::get('/pesanmakan', 'ProductscanController@index');
 Route::get('add-to-cart/{id}', 'ProductscanController@addToCart')->name('add_to_cart');
 Route::get('remove-from-cart/{id}', 'ProductscanController@removeFromCart')->name('remove_from_cart');
 Route::get('decrease-cart/{id}', 'ProductscanController@decreaseCart')->name('decrease_cart');
@@ -13,6 +13,12 @@ Route::get('/order-success/{order}', 'ProductscanController@orderSuccess')->name
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
 Route::post('/checkout', 'CheckoutController@process')->name('checkout.process');
 Route::post('/midtrans-callback', 'CheckoutController@callback')->name('midtrans.callback');
+Route::get('/order-success/{order}', 'CheckoutController@success')->name('order.success');
+
+// tampilan web
+Route::get('/', 'FrontwebController@index');
+Route::get('/fetch-unavailable-times', 'FrontwebController@fetchUnavailableTimes');
+Route::post('/submit-booking', 'FrontwebController@submitBooking');
 
 
 Route::redirect('/loginadmin', '/login');

@@ -1,0 +1,428 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #173f7b;
+  color: #fff;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header .cta {
+  background-color: #1a2130;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+header .cta:hover {
+  background-color: #3b85ad;
+}
+
+nav ul li a:hover::after,
+nav ul li a:focus::after {
+  transform: scaleX(1);
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid #83c2e4;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.hero {
+  background-image: url("img/galeri5.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.hero .hero-content {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.hero .cta {
+  background-color: #173f7b;
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.hero .cta:hover {
+  background-color: #83c2e4;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  padding: 60px 50px;
+  text-align: center;
+}
+
+.about,
+.services,
+.gallery,
+.contact {
+  animation: fadeIn 4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.about {
+  background-color: #e4eaed;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-text {
+  flex: 1;
+  padding: 20px;
+  text-align: left; /* Rata kiri */
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+
+  line-height: 1.6;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+.services {
+  background-color: #478ccf;
+}
+
+.services .service-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.services .card {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  transition: transform 0.3s ease;
+}
+
+.services .card:hover {
+  transform: translateY(-10px);
+}
+
+.gallery {
+  background-color: #e4eaed;
+}
+/* perubahan container */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.gallery-grid .portfolio-box {
+  position: relative;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem var(--bg-color);
+  overflow: hidden;
+  display: flex;
+}
+
+.portfolio-box img {
+  width: 100%;
+  transition: .5s ease;
+}
+
+.portfolio-box:hover img {
+  transform: scale(1.1);
+}
+/* info table */
+.portfolio-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(239, 253, 255, 0.1));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 4rem;
+  transform: translateY(100%);
+  transition: .5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+  transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+  font-size: 3rem;
+  color: rgb(117, 230, 255);
+}
+
+.portfolio-layer p {
+  font-size: 1.6rem;
+  margin: .3rem 0 1rem;
+  color: rgb(117, 230, 255);
+}
+/* end */
+
+.contact {
+  background-color: #478ccf;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.contact .contact-form-wrapper {
+  background-color: #bbe9ff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek menonjol */
+}
+
+.contact form input,
+.contact form textarea {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact form button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact form button:hover {
+  background-color: #cc0000;
+}
+
+.contact .contact-info {
+  text-align: left;
+  margin-top: 20px;
+}
+
+#meja {
+  width: 81%; /* Adjust the width as needed */
+  padding: 8px; /* Adjust the padding as needed */
+  border: 1px solid #ccc; /* Example border style */
+  border-radius: 4px; /* Optional: for rounded corners */
+}
+
+footer {
+  background-color: #333; /* Warna latar belakang gelap */
+  color: #fff; /* Warna teks putih */
+  text-align: center; /* Teks terpusat */
+  padding: 20px 0;
+  font-family: Arial, sans-serif; /* Opsional: Ubah font */
+}
+
+.footer-content {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center; /* Mengatur konten agar berada di tengah */
+  align-items: center;
+  flex-wrap: wrap; /* Pastikan responsif */
+  padding-bottom: 10px; /* Ruang sebelum hak cipta */
+  max-width: 960px; /* Batasi lebar maksimum konten footer */
+  margin: 0 auto; /* Tambahkan ini untuk memusatkan .footer-content jika perlu */
+}
+
+.footer-info h3,
+.footer-info p,
+.footer-social a {
+  margin-bottom: 15px;
+  margin: 20px; /* Sesuaikan margin jika perlu untuk memastikan pemusatan */
+}
+.footer-social {
+  margin-bottom: 2px; /* Menambahkan margin bawah pada keseluruhan bagian sosial */
+}
+.footer-social a {
+  display: inline-block;
+  margin: 10px; /* Ruang sekitar ikon sosial */
+  color: #fff; /* Warna ikon */
+  font-size: 24px; /* Ukuran ikon */
+  position: relative;
+}
+.footer-info p:last-child,
+.footer-social a:last-child {
+  margin-bottom: 10px;
+}
+.footer-social a:hover {
+  color: #478ccf; /* Warna lebih terang saat di-hover */
+}
+
+.footer-social a::before {
+  content: attr(title);
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.footer-social a:hover::before {
+  opacity: 1;
+}
+
+/* Ensure the copyright text is slightly smaller */
+footer > p {
+  font-size: 0.8rem;
+  margin-top: 20px; /* Space from content above */
+}
+
+footer a {
+  color: #ffffff; /* Mengatur warna teks link menjadi putih */
+}
+
+footer a:hover {
+  color: #cccccc; /* Opsional: Mengubah warna saat hover untuk feedback visual */
+}
+
+/* Loader Styles */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #173f7b;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.scroll-up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #173f7b;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: none; /* Mulai tersembunyi */
+  z-index: 999;
+}
+
+.scroll-up:hover {
+  background-color: #83c2e4;
+}

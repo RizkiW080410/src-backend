@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('table_id')->nullable();
             $table->foreign('table_id')->references('id')->on('tables');
             $table->decimal('total', 15, 2)->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default('pending');
             $table->timestamps();
             $table->softDeletes();
         });

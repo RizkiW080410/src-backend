@@ -22,8 +22,8 @@ class Order extends Model implements HasMedia
     ];
 
     public const STATUS_SELECT = [
+        'pending' => 'Pending',
         'proses' => 'Proses',
-        'panding' => 'Panding',
         'selesai' => 'Selesai',
     ];
 

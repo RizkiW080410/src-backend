@@ -23,16 +23,16 @@ class OrderController extends Controller
         
         $orders = Order::with(['products', 'table'])->get();
 
-        foreach ($orders as $order) {
-            if ($currentDateTime->greaterThanOrEqualTo(Carbon::parse($order->finish_book)) && $order->status != 'Selesai') {
-                $order->update(['status' => 'Selesai']);
-                $table = Table::find($order->table_id);
-                if ($table) {
-                    $table->status = 'kosong';
-                    $table->save();
-                }
-            }
-        }
+        // foreach ($orders as $order) {
+        //     if ($currentDateTime->greaterThanOrEqualTo(Carbon::parse($order->finish_book)) && $order->status != 'Selesai') {
+        //         $order->update(['status' => 'Selesai']);
+        //         $table = Table::find($order->table_id);
+        //         if ($table) {
+        //             $table->status = 'kosong';
+        //             $table->save();
+        //         }
+        //     }
+        // }
 
         return view('admin.orders.index', compact('orders'));
     }
@@ -70,13 +70,13 @@ class OrderController extends Controller
         $order->update(['total' => $total]);
 
         // Update table status to 'penuh' if order status is 'proses'
-        $table = Table::find($request->table_id);
-        if ($table) {
-            if ($order->status == 'proses') {
-                $table->status = 'penuh';
-                $table->save();
-            }
-        }
+        // $table = Table::find($request->table_id);
+        // if ($table) {
+        //     if ($order->status == 'proses') {
+        //         $table->status = 'penuh';
+        //         $table->save();
+        //     }
+        // }
 
         return redirect()->route('admin.orders.index');
     }
@@ -109,16 +109,16 @@ class OrderController extends Controller
 
         $order->update($request->all());
 
-        // Update table status based on order status
-        $table = Table::find($order->table_id);
-        if ($table) {
-            if ($request->status == 'selesai' && $previousStatus != 'selesai') {
-                $table->status = 'kosong';
-            } elseif ($request->status == 'proses' && $previousStatus != 'proses') {
-                $table->status = 'penuh';
-            }
-            $table->save();
-        }
+        // // Update table status based on order status
+        // $table = Table::find($order->table_id);
+        // if ($table) {
+        //     if ($request->status == 'selesai' && $previousStatus != 'selesai') {
+        //         $table->status = 'kosong';
+        //     } elseif ($request->status == 'proses' && $previousStatus != 'proses') {
+        //         $table->status = 'penuh';
+        //     }
+        //     $table->save();
+        // }
 
         $order->products()->detach();
 
@@ -151,11 +151,11 @@ class OrderController extends Controller
     {
         abort_if(Gate::denies('order_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $table = Table::find($order->table_id);
-        if ($table && $order->status != 'Cancel' && $order->status != 'Selesai') {
-            $table->status = 'kosong';
-            $table->save();
-        }
+        // $table = Table::find($order->table_id);
+        // if ($table && $order->status != 'Cancel' && $order->status != 'Selesai') {
+        //     $table->status = 'kosong';
+        //     $table->save();
+        // }
 
         $order->delete();
 
@@ -167,11 +167,11 @@ class OrderController extends Controller
         $orders = Order::find(request('ids'));
 
         foreach ($orders as $order) {
-            $table = Table::find($order->table_id);
-            if ($table && $order->status != 'Selesai') {
-                $table->status = 'kosong';
-                $table->save();
-            }
+            // $table = Table::find($order->table_id);
+            // if ($table && $order->status != 'Selesai') {
+            //     $table->status = 'kosong';
+            //     $table->save();
+            // }
             $order->delete();
         }
 

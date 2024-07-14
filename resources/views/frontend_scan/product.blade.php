@@ -12,10 +12,6 @@
         <img src="{{ $galleris[1]->image->getUrl('preview') }}" alt="" />
         <h5>{{ $galleris[1]->title }}</h5>
     </div>
-    <div class="menu--item">
-        <img src="{{ $galleris[2]->image->getUrl('preview') }}" alt="" />
-        <h5>{{ $galleris[2]->title }}</h5>
-    </div>
 </div>
 
 <!-- card item section -->
